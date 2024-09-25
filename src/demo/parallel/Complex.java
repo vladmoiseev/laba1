@@ -113,4 +113,12 @@ public class Complex {
         }
         return result;
     }
+
+    public double getRe() {
+        return re;
+    }
+
+    public double getIm() {
+        return im;
+    }
 }
