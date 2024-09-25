@@ -93,4 +93,24 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+
+    public Complex divide(Complex b) {
+        double denom = b.re * b.re + b.im * b.im;
+        double real = (re * b.re + im * b.im) / denom;
+        double imag = (im * b.re - re * b.im) / denom;
+        return new Complex(real, imag);
+    }
+
+    public double modulus() {
+        return Math.sqrt(re * re + im * im);
+    }
+
+    public Complex pow(int n) {
+        Complex result = new Complex(1, 0);
+        Complex base = this;
+        for (int i = 0; i < n; i++) {
+            result = result.times(base);
+        }
+        return result;
+    }
 }
